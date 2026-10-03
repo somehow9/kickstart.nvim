@@ -170,6 +170,7 @@ vim.o.confirm = true
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set('i', 'jk', '<esc>')
 
 -- Diagnostic Config & Keymaps
 -- See `:help vim.diagnostic.Opts`
@@ -604,7 +605,8 @@ require('lazy').setup({
       --  See `:help lsp-config` for information about keys and how to configure
       ---@type table<string, vim.lsp.Config>
       local servers = {
-        -- clangd = {},
+        clangd = {},
+        jedi_language_server = {},
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
